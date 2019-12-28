@@ -529,24 +529,36 @@ get_group_for_sudo()
 get_host_id()
 (
     # shellcheck disable=SC1091
-    . /usr/lib/os-release
-    echo "$ID"
+    # . /usr/lib/os-release
+    if [ -n "$ID"]; then
+        echo "$ID"
+    else
+        echo "unknown"
+    fi
 )
 
 
 get_host_variant_id()
 (
     # shellcheck disable=SC1091
-    . /usr/lib/os-release
-    echo "$VARIANT_ID"
+    # . /usr/lib/os-release
+    if [ -n "$VARIANT_ID"]; then
+        echo "$VARIANT_ID"
+    else
+        echo "unknown"
+    fi
 )
 
 
 get_host_version_id()
 (
     # shellcheck disable=SC1091
-    . /usr/lib/os-release
-    echo "$VERSION_ID"
+    # . /usr/lib/os-release
+    if [ -n "$VERSION_ID"]; then
+        echo "$VERSION_ID"
+    else
+        echo "unknown"
+    fi
 )
 
 
